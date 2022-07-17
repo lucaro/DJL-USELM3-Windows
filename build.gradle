@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'ch.lucaro'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation platform("ai.djl:bom:0.18.0")
+    implementation 'ai.djl:api:0.18.0'
+
+    runtimeOnly 'ai.djl.onnxruntime:onnxruntime-engine:0.18.0'
+    runtimeOnly 'ai.djl.onnxruntime:onnxruntime-native-auto:1.3.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
